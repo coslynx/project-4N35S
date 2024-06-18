@@ -1,0 +1,34 @@
+const express = require('express');
+const app = express();
+
+// Set up middleware for parsing incoming JSON data
+app.use(express.json());
+
+// Define routes for the Discord bot functionalities
+app.post('/bot/play', (req, res) => {
+  // Logic for playing videos
+});
+
+app.post('/bot/pause', (req, res) => {
+  // Logic for pausing videos
+});
+
+app.post('/bot/skip', (req, res) => {
+  // Logic for skipping videos
+});
+
+app.post('/bot/volume', (req, res) => {
+  // Logic for adjusting volume
+});
+
+app.post('/bot/settings', (req, res) => {
+  // Logic for customizing settings
+});
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+});
+
+module.exports = app;
